@@ -1,0 +1,14 @@
+<%= form_for :new_team, url:adminnewcreateteam_path  do |f| %>
+    <p>
+      <table border="1">
+      <th><%= f.label :'Takım Adı:' %></th><th>Grup</th><th>Bayrak</th>
+      <tr><td><%= f.text_field :team_name %></td>
+      <td><%=  f.collection_select(:Group_id , Group.all , :id, :group_name) %></td>
+        <td><%= f.file_field :team_flag %></td>
+      </tr>
+      </table>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

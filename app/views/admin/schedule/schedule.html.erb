@@ -1,0 +1,24 @@
+<h1>Admin::Schedule#schedule</h1>
+
+<%=  link_to 'Admin Ana Sayfa', admin_path %>
+<br><br>
+
+<table border="1  ">
+  <th>Maç Saati</th><th>Ev Sahibi Takım</th><th>Konuk Takım</th><th width="120">Maç Skoru</th><th></th>
+<% @schedule_list.each do |s| %>
+
+      <tr>
+        <td><%= s.match_day %> </td>
+        <td><%= Team.find_by_id(s.home_team_id ).team_name%></td>
+        <td><%= Team.find_by_id(s.away_team_id ).team_name%></td>
+        <td><input type="text" size="2" name="home_score"> - <input type="text" size="2" name="away_score"></td>
+        <td><%=button_to 'Sil', adminscheduledelete_path(:id =>s.id), method: :delete   %></td>
+      </tr>
+
+      <br>
+
+<% end %>
+</table>
+<br> <%= link_to 'Yeni Maç Takvimi Ekle', adminschedulenew_path%>
+<br>
+

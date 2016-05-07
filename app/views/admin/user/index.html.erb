@@ -1,0 +1,16 @@
+<h1>Üye listesi</h1>
+<%=  link_to 'Admin Ana Sayfa', admin_path %>
+<br><br>
+<table border="1">
+  <th>UserName</th><th>Email</th><th>Organization</th><th>Is Admin</th>
+  <% @user_list.each do |u| %>
+      <tr>
+        <td><%= u.first_name%> <%= u.last_name %></td>
+        <td><%= u.email%></td>
+        <td><%= u.organization_id%></td>
+        <td><%= u.is_admin%></td>
+        <td><%= u.id%></td>
+        <td><%= link_to 'Güncelle', getuser_path(:id=>u.id)%> <td>
+      </tr>
+  <% end %>
+</table>

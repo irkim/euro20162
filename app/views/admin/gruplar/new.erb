@@ -1,0 +1,10 @@
+<%= form_for :new_group, url:admincreatenewgroup_path  do |f| %>
+    <p>
+      <%= f.label :'Grup Adı:' %><br>
+      <%= f.text_field :group_name %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

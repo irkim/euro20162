@@ -1,0 +1,16 @@
+<h1>Admin::Gruplar#gruplar</h1>
+
+<%=  link_to 'Admin Ana Sayfa', admin_path %>
+<br><br>
+
+
+<% @admin_grup_list.each do |grup| %>
+    <table border="1">
+      <th><%= grup.group_name  %></th>
+      <th> <%= button_to 'Grubu Sil', admingroupdelete_path(:id => grup.id), method: :delete  %></th>
+      <br>
+    </table>
+<% end %>
+
+<br>
+<br> <%= link_to 'Yeni Grup Ekle', adminnewgroup_path%>

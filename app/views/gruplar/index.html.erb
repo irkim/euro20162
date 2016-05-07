@@ -1,0 +1,22 @@
+<h1>Euro 2016 Gruplar </h1>
+<%= link_to 'Ana Sayfa' , root_path %>
+ <br><br>
+
+<% @group_list.each do |grup| %>
+
+    <table border="1" style="width:200px">
+     <tr>
+       <th><%= grup.group_name  %></th></tr>
+      <% @team_list.each  do |team| %>
+          <% if team.Group_id == grup.id %>
+              <tr><td><%= team.team_name %></td> </tr>
+          <% end %>
+
+      <% end%>
+
+    </table>
+    <br>
+<% end %>
+
+
+
