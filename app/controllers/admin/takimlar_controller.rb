@@ -1,4 +1,7 @@
 class Admin::TakimlarController < ApplicationController
+
+  before_action :require_admin
+
   def index
     @team_list = Team.all
     @group_list = Group.all

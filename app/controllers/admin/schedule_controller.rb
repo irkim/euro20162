@@ -1,4 +1,6 @@
 class Admin::ScheduleController < ApplicationController
+  before_action :require_admin
+
   def schedule
     @schedule_list=Schedule.all
   end

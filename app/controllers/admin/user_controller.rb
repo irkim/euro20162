@@ -1,4 +1,7 @@
 class Admin::UserController < ApplicationController
+
+  before_action :require_admin
+
   def index
     @user_list= User.all
     @organization = Organization.all

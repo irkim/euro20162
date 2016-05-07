@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'admin/userlist' => 'admin/user#index', as:'userlist'
   get 'admin/user/:id' => 'admin/user#edit', as:'getuser'
   patch 'admin/user/:id' => 'admin/user#update' , as: 'updateuser'
+
+  get 'userbet' => 'userbet#index',as: 'mybets'
+
   resources :users
   get 'login'=> 'sessions#new', as:'login'
   post 'login' => 'sessions#create'

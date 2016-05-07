@@ -1,4 +1,6 @@
 class Admin::GruplarController < ApplicationController
+  before_action :require_admin
+
   def gruplar
     @admin_grup_list = Group.all
   end
