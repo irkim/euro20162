@@ -1,0 +1,27 @@
+
+<h1>Tahminlerim</h1>
+
+<%= link_to 'Ana Sayfa' , root_path %>
+<br><br>
+
+
+    <table border="1" style="width:700px">
+
+      <th>Maç ID</th><th  width="180px">Maç Saati</th><th>Ev Sahibi Takım</th><th>Konuk Takım</th><th>Skor</th><th>Tahmin</th><th>Kazanılan puan</th>
+      <% @schedule_list.each do |b| %>
+          <tr>
+            <td><%= b.id  %></td>
+            <td><%= b.match_day  %></td>
+            <td><%= Team.find_by_id(b.home_team_id).team_name%></td>
+            <td><%= Team.find_by_id(b.away_team_id).team_name%></td>
+            <td align="center"><%= b.home_team_score%> - <%= b.away_team_score%></td>
+            <td><%= Bet.find_by(:user_id=>session[:user_id] , :schedule_id => b.id) %></td>
+            <td><%= Bet.home_score_bet %> </td>
+          </tr>
+
+      <% end %>
+
+    </table>
+    <br>
+
+

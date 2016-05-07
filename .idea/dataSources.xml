@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1781879726">
+  <component name="DataSourceManagerImpl" format="xml" hash="2528600196">
     <data-source source="LOCAL" name="Rails euro2016: development" uuid="f7ed28a8-7285-4509-96a8-3dd1a6a3f636">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
