@@ -1,5 +1,6 @@
 class Bet < ActiveRecord::Base
-  has_many :teams
-  belongs_to :user
+
+  belongs_to :Schedule
+  belongs_to :User
 
 end

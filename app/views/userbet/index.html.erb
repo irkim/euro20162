@@ -15,8 +15,7 @@
             <td><%= Team.find_by_id(b.home_team_id).team_name%></td>
             <td><%= Team.find_by_id(b.away_team_id).team_name%></td>
             <td align="center"><%= b.home_team_score%> - <%= b.away_team_score%></td>
-            <td><%= Bet.find_by(:user_id=>session[:user_id] , :schedule_id => b.id) %></td>
-            <td><%= Bet.home_score_bet %> </td>
+            <td><%=b.bets.home_score_bet%></td>
           </tr>
 
       <% end %>

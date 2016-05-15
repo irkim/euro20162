@@ -1,7 +1,8 @@
 class UserbetController < ApplicationController
   def index
     @schedule_list = Schedule.all
-    @user_bet_list = Bet.find_by_user_id(session[:user_id])
+  # @user_bet_list = Bet.find_by_user_id(session[:user_id])
+   #  @user_bet_list = Bet.find_by_user_id(session[:user_id])
   end
 
   def create
